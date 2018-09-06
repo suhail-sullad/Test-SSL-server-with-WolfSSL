@@ -1,5 +1,5 @@
 #!/bin/bash
-ip_range="33.0.0.0/12"
+ip_range="33.0.0.0"
 ifconfig lo:0 $ip_range
 export PATH=/usr/local/lib:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
