@@ -48,5 +48,8 @@ tc qdisc change dev eth0 root netem delay 20ms 2ms
 #sudo tc qdisc change dev lo:0 root netem delay 20ms 10ms
 #service irqbalance stop
 echo -e "\nFollowing IP Range is enabled:$ip_range"
-./wolfsslserver_multithreaded/code/wolfsslserver -p 9999 -d ./wolfsslserver_multithreaded/cert/ -i 553844736 -s 17000 >/dev/null 2>&1 &
+# -i is for starting IP int val 
+# -s is for number of hosts to spawn
+# -p is for port
+./code/wolfsslserver -p 9999 -d ./cert/ -i 553844736 -s 10 >/dev/null 2>&1 &
 
