@@ -26,6 +26,12 @@ echo 11 > /sys/class/net/eth0/queues/rx-0/rps_cpus
 #echo 1 > /proc/sys/net/ipv4/tcp_fack
 #echo 1 > /proc/sys/net/ipv4/tcp_rfc1337
 #echo 0 > /proc/sys/net/ipv4/tcp_syncookies
+echo 16777216 >/proc/sys/net/core/rmem_max
+echo 16777216 >/proc/sys/net/core/wmem_max
+echo 4096 87380 16777216 >/proc/sys/net/ipv4/tcp_rmem
+echo 4096 65536 16777216 >/proc/sys/net/ipv4/tcp_wmem
+echo 50576   64768   98152 >/proc/sys/net/ipv4/tcp_mem
+echo 2500 >/proc/sys/net/core/netdev_max_backlog
 ifconfig eth0 txqueuelen 4096
 ethtool -G eth0 rx 4096
 ethtool -G eth0 tx 4096
